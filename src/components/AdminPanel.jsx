@@ -14,7 +14,7 @@ const AdminPanel = () => {
 
   const fetchFAQs = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/api/admin/faqs')
+      const response = await axios.get('https://chat-bot-app-qh2x.onrender.com/api/admin/faqs')
       setFaqs(response.data)
     } catch (error) {
       console.error('Error fetching FAQs:', error)
@@ -27,7 +27,7 @@ const AdminPanel = () => {
 
     setIsLoading(true)
     try {
-      const response = await axios.post('http://localhost:5000/api/admin/faqs', newFaq)
+      const response = await axios.post('https://chat-bot-app-qh2x.onrender.com/api/admin/faqs', newFaq)
       setFaqs([...faqs, response.data])
       setNewFaq({ question: '', answer: '', category: 'General' })
     } catch (error) {
@@ -40,7 +40,7 @@ const AdminPanel = () => {
   const handleUpdateFaq = async (id, updatedFaq) => {
     setIsLoading(true)
     try {
-      const response = await axios.put(`http://localhost:5000/api/admin/faqs/${id}`, updatedFaq)
+      const response = await axios.put(`https://chat-bot-app-qh2x.onrender.com/api/admin/faqs/${id}`, updatedFaq)
       setFaqs(faqs.map(faq => faq._id === id ? response.data : faq))
       setEditingId(null)
     } catch (error) {
@@ -55,7 +55,7 @@ const AdminPanel = () => {
 
     setIsLoading(true)
     try {
-      await axios.delete(`http://localhost:5000/api/admin/faqs/${id}`)
+      await axios.delete(`https://chat-bot-app-qh2x.onrender.com/api/admin/faqs/${id}`)
       setFaqs(faqs.filter(faq => faq._id !== id))
     } catch (error) {
       console.error('Error deleting FAQ:', error)

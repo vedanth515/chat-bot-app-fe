@@ -21,7 +21,7 @@
 //   useEffect(() => {
 //     const initializeChat = async () => {
 //       try {
-//         const response = await axios.post('http://localhost:5000/api/chat/conversation', {
+//         const response = await axios.post('https://chat-bot-app-qh2x.onrender.com/api/chat/conversation', {
 //           sessionId: sessionId
 //         })
         
@@ -56,7 +56,7 @@
 //     setIsLoading(true)
     
 //     try {
-//       const response = await axios.post('http://localhost:5000/api/chat/message', {
+//       const response = await axios.post('https://chat-bot-app-qh2x.onrender.com/api/chat/message', {
 //         sessionId,
 //         message: inputMessage
 //       })
@@ -163,7 +163,7 @@ const ChatInterface = () => {
   useEffect(() => {
     const initializeChat = async () => {
       try {
-        const response = await axios.post('http://localhost:5000/api/chat/conversation', {
+        const response = await axios.post('https://chat-bot-app-qh2x.onrender.com/api/chat/conversation', {
           sessionId: sessionId
         })
         
@@ -185,7 +185,7 @@ const ChatInterface = () => {
 
   const fetchUploadedFiles = async (sessionId) => {
     try {
-      const response = await axios.get(`http://localhost:5000/api/chat/files/${sessionId}`)
+      const response = await axios.get(`https://chat-bot-app-qh2x.onrender.com/api/chat/files/${sessionId}`)
       setUploadedFiles(response.data)
     } catch (error) {
       console.error('Error fetching uploaded files:', error)
@@ -208,7 +208,7 @@ const ChatInterface = () => {
     setIsLoading(true)
     
     try {
-      const response = await axios.post('http://localhost:5000/api/chat/message', {
+      const response = await axios.post('https://chat-bot-app-qh2x.onrender.com/api/chat/message', {
         sessionId,
         message: inputMessage
       })
@@ -257,7 +257,7 @@ const ChatInterface = () => {
     <ul>
       {uploadedFiles.map((file) => (
         <li key={file._id}>
-          <a href={`http://localhost:5000/${file.filename}`} target="_blank" rel="noreferrer">{file.originalName}</a>
+          <a href={`https://chat-bot-app-qh2x.onrender.com/${file.filename}`} target="_blank" rel="noreferrer">{file.originalName}</a>
         </li>
       ))}
     </ul>

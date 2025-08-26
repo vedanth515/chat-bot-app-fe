@@ -30,7 +30,7 @@ const FileUpload = ({ sessionId, onFileUpload }) => {
     formData.append('sessionId', sessionId);
 
     try {
-      const response = await axios.post('http://localhost:5000/api/chat/upload', formData, {
+      const response = await axios.post('https://chat-bot-app-qh2x.onrender.com/api/chat/upload', formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
