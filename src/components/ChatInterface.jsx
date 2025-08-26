@@ -318,7 +318,6 @@ import { useState, useEffect, useRef } from 'react'
 import axios from 'axios'
 import Message from './Message'
 import FileUpload from './FileUpload'
-// import './ChatInterface.css'
 
 const ChatInterface = () => {
   const [messages, setMessages] = useState([])

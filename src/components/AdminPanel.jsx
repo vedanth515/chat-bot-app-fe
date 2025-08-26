@@ -171,7 +171,6 @@
 
 import { useState, useEffect } from 'react'
 import axios from 'axios'
-// import './AdminPanel.css'
 
 const AdminPanel = () => {
   const [faqs, setFaqs] = useState([])

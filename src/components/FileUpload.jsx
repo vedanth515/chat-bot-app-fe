@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import axios from 'axios';
-import './FileUpload.css';
+
 
 const FileUpload = ({ sessionId, onFileUpload }) => {
   const [isUploading, setIsUploading] = useState(false);
